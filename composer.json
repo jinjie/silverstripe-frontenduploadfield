@@ -1,0 +1,21 @@
+{
+    "name": "jinjie/silverstripe-frontenduploadfield",
+    "description": "UploadField for SilverStripe 4 Frontend with Dropzonejs",
+    "type": "silverstripe-vendormodule",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kong Jin Jie",
+            "email": "jinjie@swiftdev.sg"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^4.1"
+    },
+    "extra": {
+        "expose": [
+            "res/javascript",
+            "res/css"
+        ]
+    }
+}
