@@ -31,9 +31,9 @@ class UploadField extends \SilverStripe\AssetAdmin\Forms\UploadField
         $this->setAttribute('name', $name);
 
         Requirements::customScript("Dropzone.autoDiscover = false;");
-        Requirements::javascript('silverstripe-frontenduploadfield/res/javascript/dropzone.js');
-        Requirements::css('silverstripe-frontenduploadfield/res/css/dropzone.css');
-        Requirements::css('silverstripe-frontenduploadfield/res/css/custom.css');
+        Requirements::javascript('jinjie/silverstripe-frontenduploadfield: res/javascript/dropzone.js');
+        Requirements::css('jinjie/silverstripe-frontenduploadfield: /res/css/dropzone.css');
+        Requirements::css('jinjie/silverstripe-frontenduploadfield: /res/css/custom.css');
     }
 
     public function Type()
@@ -79,5 +79,14 @@ class UploadField extends \SilverStripe\AssetAdmin\Forms\UploadField
         $this->getUpload()->clearErrors();
         return (new HTTPResponse(json_encode($result)))
             ->addHeader('Content-Type', 'application/json');
+    }
+
+    public function getAttributes()
+    {
+        $attributes = parent::getAttributes();
+
+        unset($attributes['type']);
+
+        return $attributes;
     }
 }

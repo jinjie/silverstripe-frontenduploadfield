@@ -1,0 +1,66 @@
+@import "elements";
+
+.dropzone {
+    border: 0px;
+    padding: 0px;
+    .droparea {
+        width: 100%;
+
+        span {
+            text-align: center;
+            display: block;
+            padding: 20px;
+            border: 3px dashed #999;
+            .rounded(5px);
+            .transition;
+
+            &:hover {
+                border-color: #000;
+            }
+
+            a {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .dz {
+        &-image {
+            border: 2px solid grey;
+        }
+
+        &-previews-container {
+            margin: 0px -16px;
+        }
+
+        &-preview {
+            &.dz-error {
+                .dz-image {
+                    border-color: red;
+                    
+                }
+            }
+        }
+
+        &-complete {
+            .dz-image {
+                img {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+}
+
+div {
+    &.frontenduploadfield .middleColumn .frontenduploadfield {
+        background-color: red;
+        height: 50px;
+    }
+}
+
+// Fix for silverstripe default theme
+.typography img {
+    border: 0px;
+}
